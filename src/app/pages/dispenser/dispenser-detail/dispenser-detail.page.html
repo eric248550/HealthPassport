@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>飲水機資訊</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dispenser/{{get_id}}"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{ get_dispenserID }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-list>
+            <h2 class="ion-text-center">飲水機在 {{ data_dispensers.Data && data_dispensers.Data[0]?.Location }}</h2>
+          </ion-list>
+        </ion-card>
+        <ion-card>
+          <ion-list>
+            <ion-item>
+              <ion-icon slot="start" name="snow-outline"></ion-icon>
+              <ion-label class="water" color="primary">冰水目前溫度:{{ data_dispensers.Data && data_dispensers.Data[0]?.ColdTemp }}度C</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="thermometer-outline"></ion-icon>
+              <ion-label class="water" color="primary">溫水目前溫度:{{ data_dispensers.Data && data_dispensers.Data[0]?.WarmTemp }}度C</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-icon slot="start" name="flame-outline"></ion-icon>
+              <ion-label class="water" color="danger">熱水目前溫度:{{ data_dispensers.Data && data_dispensers.Data[0]?.HotTemp }}度C</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

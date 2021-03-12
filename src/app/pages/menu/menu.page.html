@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    
+    <!-- ... 不能返回初始頁面 ... 
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-text-center"> 
+    <h1 class = "title"></h1>   
+    <ion-row>
+      <ion-col>
+        <ion-button href="/person-information/{{get_id}}" fill="outline" size="large" expand="block" class="sqare_button">
+          查詢狀況
+          <ion-icon slot="start" name="card"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button href="/dispenser/{{get_id}}" fill="outline" size="large" expand="block" class="sqare_button">
+          附近飲水機
+          <ion-icon  slot="start" name="water-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
